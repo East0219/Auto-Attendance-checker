@@ -1,14 +1,23 @@
 import pandas as pd
 from datetime import datetime
 
-# df = pd.DataFrame(columns=["이름", "기록시간"])
+#df = pd.DataFrame(columns=["이름", "기록시간"])
 # main.py에서 df 선언
 
 
 # TODO
 # dataframe에 학생의 이름, 기록시간, 기록횟수를 저장
+df = pd.DataFrame(columns=["이름", "기록시간", "기록횟수"])
+record_count = 0
 # 연속해서 3프레임 이상 얼굴이 인식되면 출석 기록
+face_recognition_condition = True
+if face_recognition_condition():
+    record_count += 1
+else:
+    record_count = 0
 
+
+if record_count >= 3:
 # q 버튼을 눌러 출력 시에는 기록횟수를 제외한 데이터 저장
 pre_df = pd.DataFrame(columns=["이름", "기록시간", "기록횟수"])
 # pre_df를 csv_management에서만 사용하면서 구현
